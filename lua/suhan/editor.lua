@@ -90,11 +90,32 @@ function Editor.complete_scope (start, ending, config)
   vim.api.nvim_set_keymap('i', start, replacer, { noremap = true, silent = true })
 end
 
+function Editor.setup_theme()
+	require("cyberdream").setup({
+		 	transparent = true,
+			borderless_telescope = true,
+			italic_comments = true,
+			theme={
+				variant = "default",
+				highlights = {
+					Comment = { fg = "#636DA6", bg = "NONE", italic = true },
+					Function  = { fg = "#86e1fc", bg = "NONE", italic = false },
+					Keyword  = { fg = "#fca7ea", bg = "NONE", italic = true },
+					String  = { fg = "#c3e88d", bg = "NONE", italic = false },
+					Identifier  = { fg = "#4fd6be", bg = "NONE", italic = false },
+				}
+			}
+		})
+
+	vim.cmd[[colorscheme cyberdream]]
+	-- vim.cmd[[colorscheme tokyonight]]
+	-- vim.cmd[[highlight Identifier guifg=#ff0000 gui=bold]]
+end
+
 
 --appearance
-vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[highlight Identifier guifg=#ff0000 gui=bold]]
 Editor.transparent_background()
+Editor.setup_theme()
 
 
 vim.opt.relativenumber = true

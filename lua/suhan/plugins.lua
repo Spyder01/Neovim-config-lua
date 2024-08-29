@@ -16,7 +16,16 @@ return require('packer').startup(function(use)
 
   use { 'numToStr/Comment.nvim' }
 	-- use 'morhetz/gruvbox'
-	use "folke/tokyonight.nvim"
+	use {
+		  "folke/tokyonight.nvim",
+			config = function ()
+				require("tokyonight").setup({
+						style = "night",
+					  transparent = true
+					})
+			end
+		}
+	use "scottmckendry/cyberdream.nvim"
 	-- use ({ 'projekt0n/caret.nvim' })
 	use 'mbbill/undotree'
 	use 'neovim/nvim-lspconfig'  -- LSP configuration
@@ -37,9 +46,7 @@ return require('packer').startup(function(use)
 	use 'nvim-tree/nvim-tree.lua'
 	use 'tpope/vim-fugitive'
 	use {
-		  'HiPhish/rainbow-delimiters.nvim',
-			config = function () require("rainbow-delimiters").setup({})
-			end
+		  'HiPhish/rainbow-delimiters.nvim'
 		}
 	use {
   'nvim-lualine/lualine.nvim',
