@@ -41,8 +41,21 @@ function svelte_lsp()
     }
 end
 
+-- CSS LSP 
+function css_lsp()
+	lsp_config.cssls.setup{}
+end
+
+
+-- HTML LSP 
+function html_lsp()
+	lsp_config.html.setup{}
+end
+
 -- Call LSP setups
 ts_lsp()
-react_lsp()
-svelte_lsp()
+css_lsp()
+html_lsp()
+-- react_lsp()
+-- svelte_lsp()
 

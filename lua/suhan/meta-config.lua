@@ -10,7 +10,8 @@ local Meta = {
 Meta.config = {
 	defualt_shell = Meta.terminal_types.fish,
 	lang = {
-		 -- js = require('suhan.lang.js')
+		 js = require('suhan.lang.js'),
+		 rust = require('suhan.lang.rust')
 	}
 }
 

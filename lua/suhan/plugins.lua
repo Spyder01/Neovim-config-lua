@@ -8,6 +8,11 @@ return require('packer').startup(function(use)
   	'nvim-telescope/telescope.nvim', tag = '0.1.8',
   	requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	use {
+			"ThePrimeagen/harpoon",
+			branch = "harpoon2",
+			requires = { {"nvim-lua/plenary.nvim"} }
+	}
   use {"ellisonleao/glow.nvim", config = function() require("glow").setup({
 	style = "dark"
   }) end}

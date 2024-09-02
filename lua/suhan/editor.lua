@@ -62,7 +62,7 @@ function Editor.complete_scope (start, ending, config)
   local _indent = config.indent or 0
 	local new_line = config.new_line or false
 
-	if not (_indent%2 == 0) then  
+	if not (_indent%2 == 0) then
 		_indent = _indent - 1
 	end
 
@@ -103,6 +103,7 @@ function Editor.setup_theme()
 					Keyword  = { fg = "#fca7ea", bg = "NONE", italic = true },
 					String  = { fg = "#c3e88d", bg = "NONE", italic = false },
 					Identifier  = { fg = "#4fd6be", bg = "NONE", italic = false },
+					Constant  = { fg = "#eeeeee", bg = "NONE", italic = false },
 				}
 			}
 		})
